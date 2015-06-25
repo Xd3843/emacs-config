@@ -1,6 +1,11 @@
-;;Fix the delete key binding
+;; Fix the delete key binding
 (normal-erase-is-backspace-mode 1)
 
+;; Set backup directory                                                                                                                                     
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+                `((".*" ,temporary-file-directory t)))
 
 ;; Add the MELPA repository
 (require 'package) 
